@@ -18,10 +18,9 @@ protocol GameProtocol {
     func startNewRound()
 }
 
-
 // MARK:  - Structures and Classes
 
-class RightOnTarget: GameProtocol {
+final class RightOnTarget: GameProtocol {
     let generator: GeneratorProtocol
     var currentRound: GameRoundProtocol!
     var isGameEnded: Bool {

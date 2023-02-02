@@ -70,13 +70,10 @@
 			children = (
 				FA43BEC42894461100790695 /* AppDelegate.swift */,
 				FA43BEC62894461100790695 /* SceneDelegate.swift */,
-				FAAC64FA28A6C6DE00837CC0 /* SelectGameVC.swift */,
-				FA43BEC82894461100790695 /* RightOnTargetVC.swift */,
-				FA5F9A2928A2AC460071EAA2 /* ColorVC.swift */,
 				FAC278E2289C496100850BA3 /* Model */,
-				FA43BECA2894461100790695 /* Main.storyboard */,
+				FAEC2396298C1EC6001A452D /* View */,
+				FAEC2397298C1ECD001A452D /* Controller */,
 				FA43BECD2894461600790695 /* Assets.xcassets */,
-				FA43BECF2894461600790695 /* LaunchScreen.storyboard */,
 				FA43BED22894461600790695 /* Info.plist */,
 			);
 			path = "Right on target";
@@ -91,6 +88,33 @@
 				FAC278E7289C64D200850BA3 /* Generator.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FAEC2396298C1EC6001A452D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAEC2398298C1F35001A452D /* Storyboards */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAEC2397298C1ECD001A452D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAAC64FA28A6C6DE00837CC0 /* SelectGameVC.swift */,
+				FA43BEC82894461100790695 /* RightOnTargetVC.swift */,
+				FA5F9A2928A2AC460071EAA2 /* ColorVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FAEC2398298C1F35001A452D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FA43BECA2894461100790695 /* Main.storyboard */,
+				FA43BECF2894461600790695 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

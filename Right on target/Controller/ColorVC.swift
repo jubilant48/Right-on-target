@@ -7,16 +7,17 @@
 
 import UIKit
 
-class ColorVC: UIViewController {
-    // Outlets
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet var colorButtons: [UIButton]!
+final class ColorVC: UIViewController {
+    // MARK: Outletes
     
-    // Logic propetie
-    var game: ColorGame!
+    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private var colorButtons: [UIButton]!
     
+    // MARK: Properties
     
-    // MARK: - Life Cycle
+    private var game: ColorGame!
+    
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,9 @@ class ColorVC: UIViewController {
         updateUI()
     }
     
-    // MARK: - View and Model interaction
+    // MARK: View and Model interaction
     
-    @IBAction func buttonTapped(_ sender: UIButton) {
+    @IBAction private func buttonTapped(_ sender: UIButton) {
         guard let color = sender.backgroundColor else { return }
         guard let value = game.colorDict[color] else { return }
         game.currentRound.calculateScore(with: value)
@@ -42,7 +43,7 @@ class ColorVC: UIViewController {
         updateUI()
     }
     
-    // MARK: - refresh View
+    // MARK: Refresh View
     
     private func updateButtons() {
         let colorKey: Dictionary<UIColor, Int>.Keys? = game.colorDict.keys
@@ -52,7 +53,7 @@ class ColorVC: UIViewController {
         }
     }
     
-    func updateUI() {
+    private func updateUI() {
         label.text = "Угадай цвет #" + game.currentHexColor!
         updateButtons()
     }
@@ -62,5 +63,4 @@ class ColorVC: UIViewController {
         alert.addAction(UIAlertAction(title: "Начать заново", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
 }

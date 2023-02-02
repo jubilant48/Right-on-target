@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: - Structures and Classes
 
-class ColorGame: GameProtocol {
+final class ColorGame: GameProtocol {
     var colorDict: [UIColor: Int] = [:]
     var currentHexColor: String?
     let generator: GeneratorProtocol
@@ -29,7 +29,6 @@ class ColorGame: GameProtocol {
     }
     
     private func generateNewColorDicionary(clouser: (Int) -> Void) {
-        
         for num in 1...4 {
             let red = generator.getRandomValue()
             let green = generator.getRandomValue()
@@ -60,7 +59,5 @@ class ColorGame: GameProtocol {
         }
         currentRound.round += 1
     }
-    
-    
 }
 

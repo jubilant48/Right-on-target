@@ -37,6 +37,5 @@ struct Generator: GeneratorProtocol  {
                              blue: CGFloat((Float((rgbValue & 0x0000ff) >> 0)) / 255.0),
                              alpha: 1)
     }
-    
 }
 

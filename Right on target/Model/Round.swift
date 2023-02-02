@@ -19,10 +19,8 @@ protocol GameRoundProtocol {
     func isGameEnded() -> Bool
 }
 
-// MARK: - Structures and Classes
+// MARK: - Class for game "Right on target"
 
-
-/// Class for game "Right of Target"
 class RoundForRightOnTarget: GameRoundProtocol {
     var score: Int = 0
     var currentSecretValue: Int!
@@ -53,9 +51,9 @@ class RoundForRightOnTarget: GameRoundProtocol {
     }
 }
 
+// MARK: - Class for game "Color game"
 
-/// Class for game "Color game"
-class RoundForColorGame: RoundForRightOnTarget {
+final class RoundForColorGame: RoundForRightOnTarget {
     
     init(valueColor: Int, rounds: Int) {
         super.init(secretValue: valueColor, rounds: rounds)

@@ -7,15 +7,17 @@
 
 import UIKit
 
-class RightOnTargetVC: UIViewController {
-    // Outlets
-    @IBOutlet var slider: UISlider!
-    @IBOutlet var label: UILabel!
+final class RightOnTargetVC: UIViewController {
+     // MARK: Outletes
     
-    // Logic propetie
-    var game: RightOnTarget!
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var label: UILabel!
     
-    // MARK: - Life cicle
+    // MARK: Properties
+    
+    private var game: RightOnTarget!
+    
+    // MARK: Life cicle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +28,10 @@ class RightOnTargetVC: UIViewController {
         updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
     
-    // MARK: - View and Model interaction
+    // MARK: View and Model interaction
 
     // Checking the number selected by the user
-    @IBAction func checkNumber() {
+    @IBAction private func checkNumber() {
         game.currentRound.calculateScore(with: Int(slider.value))
         
         if game.isGameEnded {
@@ -42,7 +44,7 @@ class RightOnTargetVC: UIViewController {
         updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
     
-    // MARK: - refresh View
+    // MARK: Refresh View
     
     private func updateLabelWithSecretNumber(newText: String) {
         label.text = newText
@@ -53,8 +55,5 @@ class RightOnTargetVC: UIViewController {
         alert.addAction(UIAlertAction(title: "Начать заново", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
-    
-    
 }
 
